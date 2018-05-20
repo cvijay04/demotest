@@ -36,12 +36,14 @@ public class App
 	            Iterator<Row> rowIterator = sheet.iterator();
 	            while (rowIterator.hasNext()) {
 	                Row row = rowIterator.next();
+	                
 	                // For each row, iterate through all the columns
 	                Iterator<Cell> cellIterator = row.cellIterator();
 	 
 	                while (cellIterator.hasNext()) {
 	                    Cell cell = cellIterator.next();
-	                    driver.get(cell.getStringCellValue());
+	                    String geturl = cell.getStringCellValue();
+	                    driver.get(geturl);
 	                    
 	                }
 	                System.out.println("");
